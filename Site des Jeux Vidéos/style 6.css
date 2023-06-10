@@ -1,0 +1,33 @@
+h1{
+text-align:center;
+}
+
+a
+{
+font-family: Arial, sans-serif;
+	color: blue;
+}
+
+
+h4{
+font-family:"trebuchet ms";
+font-size:22px;
+text-align:center;
+margin-bottom:20px;
+}
+
+b 
+{
+color: green;
+}
+
+
+body
+  {
+     background-image: url("mooning.png");
+  }
+
+p
+{
+	text-align: center;
+}

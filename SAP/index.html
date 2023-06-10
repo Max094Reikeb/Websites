@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<!--
+	Identity by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>SAP - Accueil</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<script src="assets/js/html5shiv.js"></script>
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/ie8.css" />
+		<noscript><link rel="stylesheet" href="assets/css/main.css" /></noscript>
+	</head>
+	<body class="is-loading">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<section id="main">
+						<header>
+							<span class="avatar"><img src="images/avatar.jpg" alt="" /></span>
+							<h1>SAP</h1>
+							<p>Systems, Applications and Products for data processing</p>
+						</header>
+						<hr />
+						<h2>Register</h2>
+						<form method="post" action="formulaire_inscription.php">
+							<div class="field">
+								<input type="text" name="name" id="name" placeholder="Name" required/>
+							</div>
+							<div class="field">
+								<input type="email" name="email" id="email" placeholder="Email" required/>
+							</div>
+							<div class="field">
+								<div class="select-wrapper">
+									<select required name="department" id="department" placeholder="- Service -">
+										<option value="">- Service -</option>
+										<option value="RH">RH</option>
+										<option value="Rd">R&D</option>
+										<option value="tech">IT</option>
+										<option value="Other">Other</option>
+									</select>
+								</div>
+							</div>
+							<div class="field">
+								<input type="password" name="pass" id="pass" placeholder="Password" required/>
+							</div>
+							<div class="field">
+								<input type="radio" id="woman" name="genre" required/>
+								<label for="woman">Woman</label>
+								<input type="radio" id="man" name="genre" required/>
+								<label for="man">Man</label>
+							</div>
+							<ul class="actions">
+								<li><a href="wip.html" class="button">Get Started</a></li>
+							</ul>
+						</form>
+						<hr />
+						<footer>
+							<ul class="icons">
+								<li><a href="https://twitter.com/sap" class="fa-twitter">Twitter</a></li>
+								<li><a href="https://www.instagram.com/sap/" class="fa-instagram">Instagram</a></li>
+								<li><a href="https://www.facebook.com/SAP/" class="fa-facebook">Facebook</a></li>
+								<li><a href="https://www.youtube.com/user/SAP?hl=fr" class="fa-youtube">Youtube</a></li>
+								<li><a href="https://plus.google.com/u/0/+SAP" class="fa-google-plus">Google Plus</a></li>
+								<li><a href="https://www.linkedin.com/company/sap" class="fa-linkedin">Linkedin</a></li>
+							</ul>
+						</footer>
+					</section>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="copyright">
+							<li>&copy; SAP</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/respond.min.js"></script>
+			<script>
+				if ('addEventListener' in window) {
+					window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\bis-loading\b/, ''); });
+					document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
+				}
+			</script>
+
+	</body>
+</html>

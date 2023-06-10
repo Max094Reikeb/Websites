@@ -1,0 +1,87 @@
+@font-face {
+    font-family: 'chalkdust';
+    src: url('font/chalkdust-webfont.eot');
+    src: url('font/chalkdust-webfont.eot?#iefix') format('embedded-opentype'),
+         url('font/chalkdust-webfont.woff') format('woff'),
+         url('font/chalkdust-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1{
+	color: blue;
+	text-align: center;
+}
+
+h2
+{
+	font-family: chalkdust;
+	text-align: left;
+	color: green;
+	font-size: 40px;
+	text-align: up;
+}
+
+h3
+{
+	font-size: 40px;
+	color: blue;
+	text-align: center;
+}
+
+body
+  {
+     background-image: url("mooning.png");
+  }
+
+a
+{
+	font-family: Arial, sans-serif;
+	color: blue;
+	text-align: left;
+	font-size: 20px;
+}
+
+li
+{
+	font-size: 20px;
+}
+
+b
+{
+	color: green;
+	font-size: 25px;
+}
+
+f
+{
+	color: green;
+}
+
+h2.title {
+	display: inline-block;
+}
+
+img.html{
+	height: 100px;
+	width: 100px;
+	margin-top: 10px;
+}
+
+img.icon {
+	height: 50px;
+	width: 50px;
+	vertical-align: middle;
+	margin-left: 10px;
+}
+
+img.dossier{
+	height: 100px;
+	width: 100px;
+	vertical-align: left;
+	margin-top: 2px;
+}
+
+img.game{
+	margin-top: 10px;
+}

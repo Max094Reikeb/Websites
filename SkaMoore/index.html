@@ -1,0 +1,272 @@
+<!DOCTYPE HTML>
+<!--
+	Landed by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>SkaMoore Documentation</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="shortcut icon" href="images/icon.png">
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<script src="https://kit.fontawesome.com/32bbfa8be1.js" crossorigin="anonymous"></script>
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			#scrollUp {
+				position: fixed;
+				bottom : 18px;
+				right: -300px;
+				opacity: 0.5;
+			}
+		</style>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+		<script>
+			jQuery(function(){
+				$(function () {
+					$(window).scroll(function () {
+						if ($(this).scrollTop() > 200 ) { 
+							$('#scrollUp').css('right','28px');
+						} else { 
+							$('#scrollUp').removeAttr( 'style' );
+						}
+		
+					});
+				});
+			});
+		</script>
+	</head>
+	<body class="is-preload landing">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header">
+					<h1 id="logo">SkaMoore Documentation</h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="index.html">Documentation</a></li>
+							<li><a href="releases.html">Releases</a></li>
+							<li><a href="reviews.html">Your reviews</a></li>
+							<li><a href="policy-privacy.html">Privacy Policy</a></li>
+							<li><a href="https://forums.skunity.com/resources/skamoore-library.963/" class="button primary">SkUnity Page</a></li>
+						</ul>
+					</nav>
+				</header>
+
+			<!-- Banner -->
+				<section id="banner">
+					<div class="content">
+						<header>
+							<h2>Welcome on SkaMoore Documentation.</h2>
+							<p>
+								SkaMoore is a skript-mirror library for Minecraft 1.14.<br />
+								It brings new snippets that adds cool functionalities,<br />
+								and avoid the useless utilisation of plugins.
+							</p>
+						</header>
+						<span class="image"><img src="images/logo.png" alt="" /></span>
+					</div>
+					<a href="#doc" class="goto-next scrolly">Next</a>
+				</section>
+
+			<!-- Documentation -->
+				<section id="doc" class="wrapper style1 fade-up">
+					<div class="container">
+						<header class="major">
+							<h2>Main Documentation</h2>
+							<p>Here is our library's main documentation. <br />
+							You will find every effect / condition / expression we added in it.</p>
+						</header>
+						<section>
+							<h2 style="margin-bottom: -42px;">Unstackable items</h2>
+							<code style="color: #E3110A; margin-left: 290px;">since : 1.0-beta2</code>
+							<h3 style="margin-top: 42px;">Description :</h3>
+							<h5>Allows to give players unstackable items to bypass the 64 stack limit (or 16, for snowballs or 1, for tools).</h5>
+							<h3>Pattern :</h3>
+<pre><code>give %player% unstackable item %item%
+</code></pre>
+							<h3>Examples :</h3>
+<pre><code>command /specialgive <span>&#60;</span>item<span>&#62;</span> <span>&#60;</span>integer<span>&#62;</span> <span>&#60;</span>text<span>&#62;</span>:
+    trigger:
+        give player unstackable item arg-2 of arg-1 named "%arg-3%"
+
+command /givespecialsword:
+    trigger:
+        give player unstackable item 67 of diamond sword of sharpness 4 named "ddd" with lore "&cCOOL"
+</code></pre>
+							<hr />
+							<h2 style="margin-bottom: -42px;">New line</h2>
+							<code style="color: #E3110A; margin-left: 150px;">since : 1.0-beta1</code>
+							<h3 style="margin-top: 42px;">Description :</h3>
+							<h5>Adds the possibility to set a new line on kick and ban messages.</h5>
+							<h3>Pattern :</h3>
+<pre><code>(nl|new line|newline)
+</code></pre>
+							<h3>Example :</h3>
+<pre><code>command /kick <span>&#60;</span>offline player<span>&#62;</span> <span>&#60;</span>text=reason<span>&#62;</span>:
+	trigger:
+		kick arg-1 due to "&4&lYou were kicked for : &r%nl%&b> %arg-2%"
+</code></pre>
+							<hr />
+							<h2 style="margin-bottom: -42px;">Coded text | expression</h2>
+							<code style="color: #E3110A; margin-left: 370px;">since : 1.0-beta1</code>
+							<h3 style="margin-top: 42px;">Description :</h3>
+							<h5>Codes a text into numbers, with a possibility to set a list of players who can read the original text.</h5>
+							<h3>Pattern :</h3>
+<pre><code>send coded (text|expression) %string% from %player% (with keys|as) %integer%, %integer% and %integer% [uncoded for %-players%]
+</code></pre>
+							<h3>Examples :</h3>
+<pre><code>command /cchat <span>&#60;</span>offline player<span>&#62;</span>:
+    trigger:
+        if {chat::%player%::is} is false:
+            set {chat::%player%::is} to true
+            set {chat::%player%::cansee} to arg-1
+            message "Done, true!"
+            stop
+        if {chat::%player%::is} is true:
+            set {chat::%player%::is} to false
+            message "Done, false!"
+
+on chat:
+	if {chat::%player%::is} is true:
+		cancel event
+		send coded text message from player with keys 2, 3 and 4 uncoded for {chat::%player%::cansee}
+
+on chat:
+	if {chat::%player%::is} is true:
+		cancel event
+		send coded expression message from player as 42, 21 and 90
+</code></pre>
+							<hr />
+							<h2 style="margin-bottom: -42px;">Show effect</h2> 
+							<code style="color: #E3110A; margin-left: 210px;">since : 1.0-beta1</code>
+							<h3 style="margin-top: 42px;">Description :</h3>
+							<h5>Allow to show an effect on an entity.</h5>
+							<h3>Pattern :</h3>
+<pre><code>make %entity% [show] [the] (swing their (main|off) hand|take damage|leave bed|critical|magic critical) [effect] [to %-players%]
+</code></pre>
+							<h3>Examples :</h3>
+<pre><code>command /swing:
+	trigger:
+		make player swing their main hand
+
+command /showdamage <span>&#60;</span>player<span>&#62;</span>:
+	trigger:
+		make player show the take damage effect to arg-1
+
+on damage:
+	if attacker is a witch:
+		cancel event
+		make player show magic critical effect to {_viewers::*}
+</code></pre>
+							<hr />
+							<h2 style="margin-bottom: -42px;">Tempardon</h2>
+							<code style="color: #E3110A; margin-left: 200px;">since : 1.0-beta1</code>
+							<h3 style="margin-top: 42px;">Description :</h3>
+							<h5>Shorter the tempban of a player.</h5>
+							<h3>Pattern :</h3>
+<pre><code>tempardon %player%
+</code></pre>
+							<h3>Example :</h3>
+<pre><code>command /tempardon <span>&#60;</span>offline player<span>&#62;</span>:
+	trigger:
+		if arg-1 is set:
+			tempardon arg-1
+</code></pre>
+							<hr />
+							<h2 style="margin-bottom: -42px;">Tempban</h2>
+							<code style="color: #E3110A; margin-left: 170px;">since : 1.0-beta1</code>
+							<h3 style="margin-top: 42px;">Description :</h3>
+							<h5>Temporary bans a player.</h5>
+							<h3>Pattern :</h3>
+<pre><code>tempban %player% (due to|for) %reason% for %timespan%
+</code></pre>
+							<h3>Example :</h3>
+<pre><code>command /tempban <span>&#60;</span>player<span>&#62;</span> <span>&#60;</span>text=reason<span>&#62;</span> <span>&#60;</span>timespan<span>&#62;</span>:
+	trigger:
+		if arg-1 is set:
+			if arg-2 is set:
+				if arg-3 is set:
+					tempban arg-1 due to arg-2 for arg-3
+</code></pre>	
+							<h3>To notice :</h3>
+							<h5>The duration of the ban can only be written with the form « X seconds | minutes | hours | days | weeks | years » <br />
+							Example :</h5>
+<pre><code>/tempban Max094_Reikeb Cheat 30 days
+</code></pre>
+							<hr />
+							<h2 style="margin-bottom: -42px;">Biome changed</h2>
+							<code style="color: #E3110A; margin-left: 250px;">since : 1.0-beta1</code>
+							<h3 style="margin-top: 42px;">Description :</h3>
+							<h5>Allow us to know when we change biome.</h5>
+							<h3>Pattern :</h3>
+<pre><code>[has] %player% changed biome
+</code></pre>
+							<h3>Examples :</h3>
+<pre><code>on any move:
+	if player changed biome:
+		send "&aYou just changed biome!" to player
+
+on any move:
+	has player changed biome
+	send "&aYou just changed biome &a%{biome::%player%::avant}% &ato biome &a%{biome::%player%::apres}% &a!"
+</code></pre>
+							<h3>To notice :</h3>
+							<h5>The variable which contains the biome before the event is <code>{biome::%player%::avant}</code> and the one which contains the biome after the event is <code>{biome::%player%::apres}</code></h5>
+						</section>
+					</div>
+				</section>
+
+			<!-- Form -->
+			<section id="form" class="wrapper style2 special fade">
+					<div class="container">
+						<header>
+							<h2>Contact / Submit review</h2>
+							<p>You want to contact us or submit a review? Let's fill this form!</p>
+						</header>
+						<form id="signup-form" method="post" action="form-to-email.php" class="cta">
+							<div class="row gtr-uniform gtr-50">
+								<div class="col-8 col-12-xsmall"><input type="text" name="user_name" id="user_name" required placeholder="Username"></div>
+								<div class="col-8 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Email adress"></div>
+								<div class="col-8 col-12-xsmall"><textarea name="user_message" id="user_message" required placeholder="Your message"></textarea></div>
+								<div class="col-4 col-12-xsmall"><input type="submit" value="Send" class="fit primary" /></div>
+							</div>
+						</form>
+					</div>
+				</section>
+			
+			<!-- To-top Button -->
+			<div id="scrollUp">
+					<a href="#top" class="scrolly"><img src="images/to_top.png"/></a>
+				</div>
+
+			<!-- Footer -->
+				<footer id="footer">
+					<ul class="icons">
+						<li><a href="https://twitter.com/Max094_Reikeb" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon alt fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
+							<li><a href="https://www.instagram.com/the_grapheur/" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="http://discord.gg/vrahUDc" class="icon alt fa-discord"><span class="label">Discord</span></a></li>
+							<li><a href="http://paypal.me/max094reikeb" class="icon alt fa-paypal"><span class="label">Paypal</span></a></li>
+							<li><a href="https://stackoverflow.com/users/9682738/max094-reikeb" class="icon alt fa-stack-overflow"><span class="label">Stack Overflow</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; SkaMoore. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

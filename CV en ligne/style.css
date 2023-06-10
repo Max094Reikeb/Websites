@@ -1,0 +1,82 @@
+/* Sur les écrans qui font plus de 480 px */
+@import url('https://fonts.googleapis.com/css?family=Kavivanar');
+
+@font-face {
+	font-family: 'chalkdust';
+	src: url('chalkdust.ttf') format('truetype');
+}
+
+body {
+	font-family: 'Kavivanar';
+	background-image: url('fond.png');
+}
+
+h1 {
+	font-family: 'chalkdust';
+	color: green;
+	font-size: 40px;
+}
+
+header {
+	overflow: hidden;
+	margin-bottom: 20px;
+}
+
+.middle {
+	text-align: center;
+}
+
+header .image {
+	float: right;
+	border: 10px green solid;
+	box-shadow: 6px 6px 0px black;
+	margin-top: -160px;
+	width: 200px;
+}
+
+.liseret {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100px;
+	height: 100%;
+	background-color: black;
+}
+
+section {
+	margin-left: 170px;
+	overflow: hidden;
+}
+
+section article {
+	width: 33.3%;
+	float: left;
+	box-sizing: border-box;
+}
+
+section .center {
+	padding: 0 10px;
+}
+
+/* Sur les écrans qui font moins de 480 px*/
+@media screen and (max-width: 960px) {
+	.liseret {
+		display: none;
+	}
+
+	header .image {
+		float: none;
+		margin: 0 auto;
+		display: block;
+	}
+
+	section {
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+
+	section article {
+		width: 100%;
+	}
+
+}

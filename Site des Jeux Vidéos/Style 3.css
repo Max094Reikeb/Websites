@@ -1,0 +1,21 @@
+h2{
+	font-family:"trebuchet ms"; /* famille de police "trebuchet ms" */
+	font-size:22px;/* taille de police de 22 pixels */
+	text-align:center; /* aligner le texte à gauche */
+	margin-bottom:20px; /* ajouter une marge sous le texte de 20 pixels */
+}
+
+b{
+	color: yellow
+}
+
+body
+  {
+     background-image: url("bleu.JPG");
+  }
+
+h1{
+	font-family:"Courier New";
+	color: blue;
+	text-align: center;
+}

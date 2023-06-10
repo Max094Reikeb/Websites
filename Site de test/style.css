@@ -1,0 +1,21 @@
+body
+  {
+     background-image: url("mooning.png");
+  }
+
+p{
+	color: red;
+}
+
+b{
+	color: blue;
+}
+
+h1{
+	text-align: center;
+}
+
+h2{
+	text-align: center;
+	color: red;
+}
