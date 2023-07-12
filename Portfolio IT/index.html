@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Maxence Bekier</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="mediaqueries.css"/>
+</head>
+<body>
+<nav id="desktop-nav">
+    <div class="logo"><a href="#profile">Maxence Bekier</a></div>
+    <div>
+        <ul class="nav-links">
+            <li><a href="#about">À propos</a></li>
+            <li><a href="#experience">Mon expérience</a></li>
+            <li><a href="#projects">Mes projets</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+<nav id="hamburger-nav">
+    <div class="logo">Maxence Bekier</div>
+    <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="menu-links">
+            <li><a href="#about" onclick="toggleMenu()">À propos</a></li>
+            <li><a href="#experience" onclick="toggleMenu()">Mon expérience</a></li>
+            <li><a href="#projects" onclick="toggleMenu()">Mes projets</a></li>
+            <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+        </div>
+    </div>
+</nav>
+<img id="scroll-arrow" src="./assets/arrow.png" alt="Arrow icon" class="icon arrow"
+     style="position:fixed; bottom: 20px; right: 20px;" onclick=""/>
+<section id="profile" class="scroll-section">
+    <div class="section__pic-container">
+        <img src="./assets/profile-pic.png" alt="Photo de profil" id="profile-pic"/>
+    </div>
+    <div class="section__text">
+        <p class="section__text__p1">Bonjour, je m'appelle</p>
+        <h1 class="title">Maxence Bekier</h1>
+        <p class="section__text__p2">Développeur Frontend</p>
+        <div class="btn-container">
+            <button class="btn btn-color-2" onclick="window.open('./assets/resume-example.pdf')">Mon CV</button>
+            <button class="btn btn-color-1" onclick="location.href='#contact'">Mon Contact</button>
+        </div>
+        <div id="socials-container">
+            <img src="./assets/github.png" alt="Github" class="icon"
+                 onclick="location.href='https://github.com/Max094Reikeb'"/>
+            <img src="./assets/linkedin.png" alt="LinkedIn" class="icon"
+                 onclick="location.href='https://www.linkedin.com/in/maxence-bekier-8a1a651b7/'"/>
+        </div>
+    </div>
+</section>
+<section id="about" class="scroll-section">
+    <p class="section__text__p1">Apprenez-en plus</p>
+    <h1 class="title">À propos de moi</h1>
+    <div class="section-container">
+        <div class="section__pic-container">
+            <img src="./assets/about-pic.png" alt="Profile picture" class="about-pic"/>
+        </div>
+        <div class="about-details-container">
+            <div class="about-containers">
+                <div class="details-container">
+                    <img src="./assets/experience.png" alt="Experience icon" class="icon"/>
+                    <h3>Expérience Professionnelle</h3>
+                    <p>
+                        1 an de Développement Microsoft.
+                    </p>
+                </div>
+                <div class="details-container">
+                    <img src="./assets/education.png" alt="Education icon" class="icon"/>
+                    <h3>Éducation</h3>
+                    <p style="text-align: left;">
+                        2022 / Aujourd'hui - Licence professionnelle.<br/>
+                        2019 / 2022 - Prépa intégrée à une école d'ingénierie en informatique.<br/>
+                        2019 - Baccalauréat Scientifique.
+                    </p>
+                </div>
+            </div>
+            <div class="text-container">
+                <p>
+                    Je m'appelle Maxence. Né en 2001, je suis passionné par l'informatique et les innovations
+                    technologiques depuis tout petit. J'ai toujours aimé programmé, et ai d'ailleurs fait de nombreux
+                    projets personnels avec des connaissances apprises en autodidacte. Mon handicap moteur ne m'a pas
+                    empêché d'obtenir mon Baccalauréat, avant d'intégrer une école préparatoire intégrée à une école
+                    d'ingénierie en informatique. Actuellement en 3ème année de license professionnelle, j'ai déjà des
+                    expériences dans le monde de l'entreprise, et possède d'ailleurs une reconnaissance de travailleur
+                    handicapé.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="experience" class="scroll-section">
+    <p class="section__text__p1">Explorez mon</p>
+    <h1 class="title">Expérience personnelle</h1>
+    <div class="experience-details-container">
+        <div class="about-containers">
+            <div class="details-container">
+                <h2 class="experience-sub-title">Développement Frontend</h2>
+                <div class="article-container">
+                    <article>
+                        <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
+                        <div>
+                            <h3>HTML</h3>
+                            <p>Expérimenté</p>
+                        </div>
+                    </article>
+                    <article>
+                        <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
+                        <div>
+                            <h3>CSS</h3>
+                            <p>Expérimenté</p>
+                        </div>
+                    </article>
+                    <article>
+                        <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
+                        <div>
+                            <h3>JavaScript</h3>
+                            <p>Intermédiaire</p>
+                        </div>
+                    </article>
+                    <article>
+                        <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
+                        <div>
+                            <h3>TypeScript</h3>
+                            <p>Débutant</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            <div class="details-container">
+                <h2 class="experience-sub-title">Développement Backend / Applicatif</h2>
+                <div class="article-container">
+                    <article>
+                        <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
+                        <div>
+                            <h3>Java</h3>
+                            <p>Expérimenté</p>
+                        </div>
+                    </article>
+                    <article>
+                        <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
+                        <div>
+                            <h3>Python</h3>
+                            <p>Expérimenté</p>
+                        </div>
+                    </article>
+                    <article>
+                        <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
+                        <div>
+                            <h3>Swift</h3>
+                            <p>Intermédiaire</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            <div class="details-container">
+                <h2 class="experience-sub-title">Outils Microsoft</h2>
+                <div class="article-container">
+                    <article>
+                        <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
+                        <div>
+                            <h3>Suite Office</h3>
+                            <p>Expérimenté</p>
+                        </div>
+                    </article>
+                    <article>
+                        <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
+                        <div>
+                            <h3>PowerApps</h3>
+                            <p>Intermédiaire</p>
+                        </div>
+                    </article>
+                    <article>
+                        <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
+                        <div>
+                            <h3>PowerAutomate</h3>
+                            <p>Intermédiaire</p>
+                        </div>
+                    </article>
+                    <article>
+                        <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
+                        <div>
+                            <h3>SharePoint</h3>
+                            <p>Intermédiaire</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            <div class="details-container">
+                <h2 class="experience-sub-title">Divers</h2>
+                <div class="article-container">
+                    <article>
+                        <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
+                        <div>
+                            <h3>Git</h3>
+                            <p>Expérimenté</p>
+                        </div>
+                    </article>
+                    <article>
+                        <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
+                        <div>
+                            <h3>Markdown</h3>
+                            <p>Débutant</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="projects" class="scroll-section">
+    <p class="section__text__p1">Recherchez mes récents</p>
+    <h1 class="title">Projets</h1>
+    <div class="experience-details-container">
+        <div class="about-containers">
+            <div class="details-container color-container">
+                <div class="article-container">
+                    <img src="./assets/projets/neg-project.png" alt="NEG Minecraft" class="project-img"/>
+                </div>
+                <h2 class="experience-sub-title project-title">Projet NEG</h2>
+                <div class="btn-container">
+                    <button class="btn btn-color-2 project-btn"
+                            onclick="location.href='https://github.com/Max094Reikeb/NotEnoughGamerules'">Github
+                    </button>
+                    <button class="btn btn-color-2 project-btn"
+                            onclick="location.href='https://www.curseforge.com/minecraft/mc-mods/not-enough-gamerules'">
+                        Démo Live
+                    </button>
+                </div>
+            </div>
+            <div class="details-container color-container">
+                <div class="article-container">
+                    <img src="./assets/projets/snake-project.png" alt="Snake Python" class="project-img"/>
+                </div>
+                <h2 class="experience-sub-title project-title">Projet Snake</h2>
+                <div class="btn-container">
+                    <button class="btn btn-color-2 project-btn"
+                            onclick="location.href='https://github.com/Max094Reikeb/Websites/tree/main/SNAKE'">Github
+                    </button>
+                    <button class="btn btn-color-2 project-btn"
+                            onclick="location.href='https://snaky-game.000webhostapp.com'">Démo Live
+                    </button>
+                </div>
+            </div>
+            <div class="details-container color-container">
+                <div class="article-container">
+                    <img src="./assets/projets/country-tracker-project.png" alt="Country Tracker App"
+                         class="project-img"/>
+                </div>
+                <h2 class="experience-sub-title project-title">Projet Country Tracker</h2>
+                <div class="btn-container">
+                    <button class="btn btn-color-2 project-btn"
+                            onclick="location.href='https://github.com/Max094Reikeb/Country-Tracker'">Github
+                    </button>
+                    <button class="btn btn-color-2 project-btn" onclick="location.href='https://country-tracker.app/'">
+                        Démo Live
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="contact" class="scroll-section">
+    <p class="section__text__p1">Mettons-nous en relation</p>
+    <h1 class="title">Contactez-Moi</h1>
+    <div class="contact-info-upper-container">
+        <div class="contact-info-container">
+            <img src="./assets/email.png" alt="Email icon" class="icon contact-icon email-icon"/>
+            <p><a href="mailto:maxencebekier@gmail.com">maxencebekier@gmail.com</a></p>
+        </div>
+        <div class="contact-info-container">
+            <img src="./assets/linkedin.png" alt="Linkedin" class="icon contact-icon"/>
+            <p><a href="https://www.linkedin.com/in/maxence-bekier-8a1a651b7/">LinkedIn</a></p>
+        </div>
+    </div>
+</section>
+<footer>
+    <nav>
+        <div class="nav-links-container">
+            <ul class="nav-links">
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#experience">Mon expérience</a></li>
+                <li><a href="#projects">Mes projets</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <p>Copyright &#169; 2023 Maxence Bekier. All Rights Reserved.</p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
