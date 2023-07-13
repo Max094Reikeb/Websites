@@ -803,7 +803,7 @@ header nav a:hover {
 
 .hero {
     background-color: var(--color-background-dark);
-    background-image: url(assets/globe.png);
+    background-image: url(assets/banner.png);
     background-position: 50%;
     background-repeat: no-repeat;
     background-size:cover
