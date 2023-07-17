@@ -1,298 +1,375 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="assets/css/pe-icon-7-stroke.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/pe-helper.css">
+    <link rel="stylesheet" href="assets/css/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:wght@700;900&display=swap"
+          rel="stylesheet">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/leaflet.css">
+    <link rel="stylesheet" href="assets/css/aos.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <script src="https://kit.fontawesome.com/3021dfb2e8.js" crossorigin="anonymous"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GVRF3KSH62"></script>
+    <script src="assets/js/top.js"></script>
     <title>Maxence Bekier</title>
-    <link rel="stylesheet" href="style.css"/>
-    <link rel="stylesheet" href="media-queries.css"/>
 </head>
-<body>
-<img id="scroll-arrow" src="./assets/arrow.png" alt="Arrow icon" class="icon arrow"
-     style="position:fixed; bottom: 20px; right: 20px;" onclick=""/>
-<section id="profile" class="scroll-section full-scroll-section">
-    <nav id="desktop-nav" class="menu">
-        <div class="logo">
-            <a href="#profile">Maxence Bekier</a>
-        </div>
-        <div>
-            <ul class="nav-links">
-                <li><a href="#about">À propos</a></li>
-                <li><a href="#projects">Mes projets</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+
+<body data-bs-spy="scroll" data-bs-target="#site-navbar" class="home-consultant">
+
+<div class="preloader js-preloader flex-center">
+    <div class="dots">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
+</div>
+
+<header class="site-header" id="site-header">
+    <nav class="navbar navbar-expand-xl" id="site-navbar">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Activer la navigation">
+                <span class="navbar-toggler-icon"><i class="bi bi-list"></i></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#site-header">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about-section">À propos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#portfolio-section">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact-section">Contact</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
-    <nav id="hamburger-nav" class="menu">
-        <div class="logo">
-            Maxence Bekier
-        </div>
-        <div class="hamburger-menu">
-            <div class="hamburger-icon" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <div class="menu-links">
-                <li><a href="#about" onclick="toggleMenu()">À propos</a></li>
-                <li><a href="#projects" onclick="toggleMenu()">Mes projets</a></li>
-                <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-            </div>
-        </div>
-    </nav>
-    <div class="section__pic-container">
-        <img src="./assets/profile-pic.png" alt="Photo de profil" id="profile-pic"/>
-    </div>
-    <div class="section__text">
-        <p class="section__text__p1">Bonjour, je m'appelle</p>
-        <h1 class="title">Maxence Bekier</h1>
-        <p class="section__text__p2">Développeur Frontend</p>
-        <div class="btn-container">
-            <button class="btn btn-color-2" onclick="window.open('./assets/resume-example.pdf')">Mon CV</button>
-            <button class="btn btn-color-1" onclick="location.href='#contact'">Mon Contact</button>
-        </div>
-        <div id="socials-container">
-            <img src="./assets/github.png" alt="Github" class="icon"
-                 onclick="location.href='https://github.com/Max094Reikeb'"/>
-            <img src="./assets/linkedin.png" alt="LinkedIn" class="icon"
-                 onclick="location.href='https://www.linkedin.com/in/maxence-bekier-8a1a651b7/'"/>
-        </div>
-    </div>
-</section>
-<section id="about" class="scroll-section">
-    <p class="section__text__p1">Apprenez-en plus</p>
-    <h1 class="title">À propos de moi</h1>
-    <div class="section-container">
-        <div class="section__pic-container">
-            <img src="./assets/about-pic.png" alt="Profile picture" class="about-pic"/>
-        </div>
-        <div class="about-details-container">
-            <div class="about-containers">
-                <div class="details-container">
-                    <img src="./assets/experience.png" alt="Experience icon" class="icon"/>
-                    <h3>Expérience Professionnelle</h3>
+</header>
+
+<section class="hero-area full" id="hero-area">
+    <div class="container">
+        <div class="hero-content d-flex">
+            <div class="row d-flex align-items-center">
+                <div class="col-xl-6 content-block">
+                    <h1><span>Bonjour, je m'appelle</span>Maxence <strong>Bekier</strong></h1>
                     <p>
-                        1 an de Développement Microsoft.
+                        Je suis un développeur <span class="typer" id="main" data-words="web, mobile, d'applications"
+                                                     data-delay="100" data-deleteDelay="1000"></span>
                     </p>
+                    <div class="link-group">
+                        <a class="btn-main" href="assets/Bekier-Maxence_CV.pdf" target="_blank">Mon CV</a>
+                        <a class="btn-text" href="#contact-section">Contactez-moi</a>
+                    </div>
                 </div>
-                <div class="details-container">
-                    <img src="./assets/education.png" alt="Education icon" class="icon"/>
-                    <h3>Éducation</h3>
-                    <p style="text-align: left;">
-                        2022 / Aujourd'hui - Licence professionnelle.<br/>
-                        2019 / 2022 - Prépa intégrée à une école d'ingénierie en informatique.<br/>
-                        2019 - Baccalauréat Scientifique.
-                    </p>
+                <div class="col-xl-6 image-block">
+                    <div class="block-wrapper">
+                        <div class="image-wrapper">
+                            <img class="img-fluid profile-fluid-img" src="assets/images/profile-pic.png"
+                                 alt="profile picture">
+                        </div>
+                        <ul class="fun-facts">
+                            <li>
+                                <span><i class="fa-solid fa-plus"></i></span>
+                                <h3>Précis et<br>attentionné</h3>
+                            </li>
+                            <li>
+                                <span><i class="fa-solid fa-plus"></i></span>
+                                <h3>Travail <br>d'équipe</h3>
+                            </li>
+                            <li>
+                                <span><i class="fa-solid fa-plus"></i></span>
+                                <h3>Toujours <br>présent</h3>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-            <div class="text-container">
+        </div>
+    </div>
+    <div class="design-elements">
+        <img class="de-hero-1 elem-updown" src="assets/images/elements/hero-element-1.png" alt="hero element 1">
+        <img class="de-hero-2 elem-move" src="assets/images/elements/hero-element-2.png" alt="hero element 2">
+        <img class="de-hero-3 elem-zoom" src="assets/images/elements/hero-element-3.png" alt="hero element 3">
+        <img class="de-hero-4 elem-zoom" src="assets/images/elements/hero-element-3.png" alt="hero element 3">
+        <img class="de-hero-5 elem-zoom" src="assets/images/elements/hero-element-3.png" alt="hero element 3">
+        <img class="de-hero-6 elem-zoom" src="assets/images/elements/hero-element-3.png" alt="hero element 3">
+        <img class="de-hero-7" src="assets/images/elements/hero-element-4.png" alt="hero element 4">
+        <img class="de-hero-8" src="assets/images/elements/hero-element-5.png" alt="hero element 5">
+    </div>
+</section>
+
+<section class="about-section full section-block" id="about-section" data-aos="fade-up">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6 image-block" data-aos="fade-right" data-aos-delay="200" data-aos-duration="2000">
+                <div class="img-wrapper about-img-wrap" data-tilt data-tilt-max="10">
+                    <img class="about-img-1 img-fluid desktop-comp-image" src="assets/images/travel-pic.png"
+                         alt="traveling">
+                    <img class="about-img-2 img-fluid desktop-image" src="assets/images/about-pic.png" alt="about-pic">
+                </div>
+            </div>
+            <div class="col-xl-6 content-block" data-aos="fade-right" data-aos-delay="400" data-aos-duration="2000">
+                <h2><span>À propos de moi</span></h2>
                 <p>
-                    Je m'appelle Maxence. Né en 2001, je suis passionné par l'informatique et les innovations
-                    technologiques depuis tout petit. J'ai toujours aimé programmé, et ai d'ailleurs fait de nombreux
-                    projets personnels avec des connaissances apprises en autodidacte. Mon handicap moteur ne m'a pas
-                    empêché d'obtenir mon Baccalauréat, avant d'intégrer une école préparatoire intégrée à une école
-                    d'ingénierie en informatique. Actuellement en 3ème année de license professionnelle, j'ai déjà des
-                    expériences dans le monde de l'entreprise, et possède d'ailleurs une reconnaissance de travailleur
-                    handicapé.
+                    Né en 2001, je suis passionné par l'informatique et les innovations technologiques depuis tout
+                    petit. J'ai toujours aimé programmé, et ai d'ailleurs fait de nombreux projets personnels avec des
+                    connaissances apprises en autodidacte. Mon handicap moteur ne m'a pas empêché d'obtenir mon
+                    Baccalauréat, avant d'intégrer une école préparatoire intégrée à une école d'ingénierie en
+                    informatique. Actuellement en 3ème année de license professionnelle, j'ai déjà des expériences dans
+                    le monde de l'entreprise, et possède d'ailleurs une reconnaissance de travailleur handicapé.
                 </p>
-            </div>
-        </div>
-    </div>
-    <div class="about-details-containers">
-        <div class="about-containers">
-            <div class="details-container">
-                <h2 class="experience-sub-title">Développement Frontend</h2>
-                <div class="article-container">
-                    <article>
-                        <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
-                        <div>
-                            <h3>HTML</h3>
-                            <p>Expérimenté</p>
-                        </div>
-                    </article>
-                    <article>
-                        <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
-                        <div>
-                            <h3>CSS</h3>
-                            <p>Expérimenté</p>
-                        </div>
-                    </article>
-                    <article>
-                        <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
-                        <div>
-                            <h3>JavaScript</h3>
-                            <p>Intermédiaire</p>
-                        </div>
-                    </article>
-                    <article>
-                        <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
-                        <div>
-                            <h3>TypeScript</h3>
-                            <p>Débutant</p>
-                        </div>
-                    </article>
-                </div>
-            </div>
-            <div class="details-container">
-                <h2 class="experience-sub-title">Développement Backend / Applicatif</h2>
-                <div class="article-container">
-                    <article>
-                        <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
-                        <div>
-                            <h3>Java</h3>
-                            <p>Expérimenté</p>
-                        </div>
-                    </article>
-                    <article>
-                        <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
-                        <div>
-                            <h3>Python</h3>
-                            <p>Expérimenté</p>
-                        </div>
-                    </article>
-                    <article>
-                        <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
-                        <div>
-                            <h3>Swift</h3>
-                            <p>Intermédiaire</p>
-                        </div>
-                    </article>
-                </div>
-            </div>
-            <div class="details-container">
-                <h2 class="experience-sub-title">Outils Microsoft</h2>
-                <div class="article-container">
-                    <article>
-                        <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
-                        <div>
-                            <h3>Suite Office</h3>
-                            <p>Expérimenté</p>
-                        </div>
-                    </article>
-                    <article>
-                        <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
-                        <div>
-                            <h3>PowerApps</h3>
-                            <p>Intermédiaire</p>
-                        </div>
-                    </article>
-                    <article>
-                        <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
-                        <div>
-                            <h3>PowerAutomate</h3>
-                            <p>Intermédiaire</p>
-                        </div>
-                    </article>
-                    <article>
-                        <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
-                        <div>
-                            <h3>SharePoint</h3>
-                            <p>Intermédiaire</p>
-                        </div>
-                    </article>
-                </div>
-            </div>
-            <div class="details-container">
-                <h2 class="experience-sub-title">Divers</h2>
-                <div class="article-container">
-                    <article>
-                        <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
-                        <div>
-                            <h3>Git</h3>
-                            <p>Expérimenté</p>
-                        </div>
-                    </article>
-                    <article>
-                        <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
-                        <div>
-                            <h3>Markdown</h3>
-                            <p>Débutant</p>
-                        </div>
-                    </article>
+                <p>
+                    Sur mon temps libre, je joue aux jeux vidéos, je regarde des films et séries, et je développe des
+                    projets personnels. J'aime aussi un peu voyager et découvrir de nouveaux pays.
+                </p>
+                <div class="personal-details row">
+                    <div class="col-md-6">
+                        <ul class="personal-info">
+                            <li>
+                                <h4>Nom complet</h4>
+                                <p>Maxence Émilien Bekier</p>
+                            </li>
+                            <li>
+                                <h4>Email</h4>
+                                <p>maxence@bekier.fr</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="personal-info">
+                            <li>
+                                <h4>Éducation</h4>
+                                <p>Licence professionnelle en développement web <br>(en cours)</p>
+                            </li>
+                            <li>
+                                <h4>Emploi</h4>
+                                <p>Apprenti chez SIEMENS</p>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<section id="projects" class="scroll-section">
-    <p class="section__text__p1">Recherchez mes récents</p>
-    <h1 class="title">Projets</h1>
-    <div class="experience-details-container">
-        <div class="about-containers">
-            <div class="details-container color-container">
-                <div class="article-container">
-                    <img src="./assets/projets/neg-project.png" alt="NEG Minecraft" class="project-img"/>
+
+<section class="experience-section" id="experience-section">
+    <div class="container">
+        <div class="section-title dark">
+            <h2>Mes connaissances</h2>
+        </div>
+        <div class="experienceCarousel">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="image-wrapper">
+                        <i class="fa-brands fa-html5"></i>
+                        <p>HTML 5</p>
+                    </div>
                 </div>
-                <h2 class="experience-sub-title project-title">Projet NEG</h2>
-                <div class="btn-container">
-                    <button class="btn btn-color-2 project-btn"
-                            onclick="location.href='https://github.com/Max094Reikeb/NotEnoughGamerules'">Github
-                    </button>
-                    <button class="btn btn-color-2 project-btn"
-                            onclick="location.href='https://www.curseforge.com/minecraft/mc-mods/not-enough-gamerules'">
-                        Démo Live
-                    </button>
+                <div class="swiper-slide">
+                    <div class="image-wrapper">
+                        <i class="fa-brands fa-css3-alt"></i>
+                        <p>CSS 3</p>
+                    </div>
                 </div>
-            </div>
-            <div class="details-container color-container">
-                <div class="article-container">
-                    <img src="./assets/projets/snake-project.png" alt="Snake Python" class="project-img"/>
+                <div class="swiper-slide">
+                    <div class="image-wrapper">
+                        <i class="fa-brands fa-square-js"></i>
+                        <p>JavaScript</p>
+                    </div>
                 </div>
-                <h2 class="experience-sub-title project-title">Projet Snake</h2>
-                <div class="btn-container">
-                    <button class="btn btn-color-2 project-btn"
-                            onclick="location.href='https://github.com/Max094Reikeb/Websites/tree/main/SNAKE'">Github
-                    </button>
-                    <button class="btn btn-color-2 project-btn"
-                            onclick="location.href='https://snaky-game.000webhostapp.com'">Démo Live
-                    </button>
+                <div class="swiper-slide">
+                    <div class="image-wrapper">
+                        <i class="fa-brands fa-php"></i>
+                        <p>PHP</p>
+                    </div>
                 </div>
-            </div>
-            <div class="details-container color-container">
-                <div class="article-container">
-                    <img src="./assets/projets/country-tracker-project.png" alt="Country Tracker App"
-                         class="project-img"/>
+                <div class="swiper-slide">
+                    <div class="image-wrapper">
+                        <i class="fa-brands fa-wordpress"></i>
+                        <p>Wordpress</p>
+                    </div>
                 </div>
-                <h2 class="experience-sub-title project-title">Projet Country Tracker</h2>
-                <div class="btn-container">
-                    <button class="btn btn-color-2 project-btn"
-                            onclick="location.href='https://github.com/Max094Reikeb/Country-Tracker'">Github
-                    </button>
-                    <button class="btn btn-color-2 project-btn" onclick="location.href='https://country-tracker.app/'">
-                        Démo Live
-                    </button>
+                <div class="swiper-slide">
+                    <div class="image-wrapper">
+                        <i class="fa-brands fa-java"></i>
+                        <p>Java</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="image-wrapper">
+                        <i class="fab fa-python"></i>
+                        <p>Python</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="image-wrapper">
+                        <i class="fab fa-swift"></i>
+                        <p>Swift</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="image-wrapper">
+                        <i class="fa-brands fa-git-alt"></i>
+                        <p>Git</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<section id="contact" class="scroll-section">
-    <p class="section__text__p1">Mettons-nous en relation</p>
-    <h1 class="title">Contactez-Moi</h1>
-    <div class="contact-info-upper-container">
-        <div class="contact-info-container">
-            <img src="./assets/email.png" alt="Email icon" class="icon contact-icon email-icon"/>
-            <p><a href="mailto:maxencebekier@gmail.com">maxencebekier@gmail.com</a></p>
+
+<section class="portfolio-section full section-block" id="portfolio-section">
+    <div class="container">
+        <div class="section-title">
+            <h2>Portfolio</h2>
         </div>
-        <div class="contact-info-container">
-            <img src="./assets/linkedin.png" alt="Linkedin" class="icon contact-icon"/>
-            <p><a href="https://www.linkedin.com/in/maxence-bekier-8a1a651b7/">LinkedIn</a></p>
+        <div class="button-group filter-button-group">
+            <button class="active" data-filter="*">Tous</button>
+            <button class="" data-filter=".html">HTML/CSS/JavaScript</button>
+            <button class="" data-filter=".java">Java</button>
+            <button class="" data-filter=".swift">Swift</button>
+            <button class="" data-filter=".app">App</button>
+        </div>
+        <div class="row grid" data-aos="fade-up" data-aos-duration="2000">
+            <!-- NEG project -->
+            <div class="col-lg-4 col-md-6 grid-item java">
+                <div class="box box_border">
+                    <img src="assets/images/projects/neg-project.png" alt="neg-project">
+                    <div class="box-content">
+                        <span class="category">Java</span>
+                        <h3 class="title">Mod Minecraft NEG</h3>
+                    </div>
+                    <div class="icon-box"><a href="https://www.curseforge.com/minecraft/mc-mods/not-enough-gamerules/"
+                                             target="_blank"><i class="bi bi-plus-lg"></i></a></div>
+                </div>
+            </div>
+
+            <!-- Snake project -->
+            <div class="col-lg-4 col-md-6 grid-item html">
+                <div class="box box_border">
+                    <img src="assets/images/projects/snake-project.png" alt="snake-project">
+                    <div class="box-content">
+                        <span class="category">HTML/CSS/JavaScript</span>
+                        <h3 class="title">Site Internet Jeu Snake</h3>
+                    </div>
+                    <div class="icon-box"><a href="https://snaky-game.000webhostapp.com/" target="_blank"><i
+                            class="bi bi-plus-lg"></i></a></div>
+                </div>
+            </div>
+
+            <!-- Country Tracker project -->
+            <div class="col-lg-4 col-md-6 grid-item app swift">
+                <div class="box box_border">
+                    <img src="assets/images/projects/country-tracker-project.png" alt="country-tracker-project">
+                    <div class="box-content">
+                        <span class="category">App Swift</span>
+                        <h3 class="title">Application iOS Country Tracker</h3>
+                    </div>
+                    <div class="icon-box"><a href="https://country-tracker.app/" target="_blank"><i
+                            class="bi bi-plus-lg"></i></a></div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
-<footer>
-    <nav class="nav-footer">
-        <div class="nav-links-container">
-            <ul class="nav-links">
-                <li><a href="#about">À propos</a></li>
-                <li><a href="#projects">Mes projets</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+
+<section class="contact-section section-block" id="contact-section">
+    <div class="container">
+        <div class="section-title">
+            <h2>Contactez-moi</h2>
         </div>
-    </nav>
-    <p>Copyright &#169; 2023 Maxence Bekier. All Rights Reserved.</p>
+        <div class="row">
+            <div class="col-lg-6 leaflet-map-display" data-aos="fade-right" data-aos-duration="1000"
+                 data-aos-delay="600">
+                <div class="map-wrapper" id="mapwrapper">
+                </div>
+            </div>
+            <div class="col-lg-6 google-map-display" data-aos="fade-right" data-aos-duration="1000"
+                 data-aos-delay="600">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20784.642708671072!2d2.3522219!3d48.856614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z!5e0!3m2!1sen!2sus!4v1677896022911!5m2!1sen!2sus"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="col-lg-6 form-block" data-aos="fade-right" data-aos-duration="1500" data-aos-delay="1100">
+                <h3>Envoyez-moi un message</h3>
+                <form class="row g-3" type="contact-email" name="contact-email" method="POST" action="form-to-mail.php">
+                    <div class="col-md-6">
+                        <div class="input-group mb-3">
+                            <label for="inputName" class="form-label visually-hidden">Nom</label>
+                            <input type="text" class="form-control" id="inputName" placeholder="Nom*" name="inputName"
+                                   required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-group mb-3">
+                            <label for="inputEmail" class="form-label visually-hidden">Email</label>
+                            <input type="email" class="form-control" id="inputEmail" name="inputEmail"
+                                   placeholder="Email*" required>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <label for="inputMessage" class="form-label visually-hidden">Message</label>
+                        <textarea class="form-control mb-3" id="inputMessage" name="inputMessage"
+                                  placeholder="Votre message ici*" required></textarea>
+                        <button type="submit" class="btn btn-main" name="submit">Envoyer</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="site-footer" id="site-footer">
+    <div class="container">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-lg-6 text-center branding-block">
+                <ul class="list-inline footer-social">
+                    <li class="list-inline-item"><a href="https://www.linkedin.com/in/maxence-bekier-8a1a651b7/"
+                                                    target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                    <li class="list-inline-item"><a href="https://github.com/Max094Reikeb" target="_blank"><i
+                            class="fa-brands fa-github"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="back-to-top"><a href="#site-header"><i class="fa-solid fa-arrow-up"></i></a></div>
+        <div class="row footer-bottom align-items-center justify-content-center">
+            <div class="col-md-6 text-center">
+                <p>Copyright &#169; 2023 <strong>Maxence Bekier</strong>. All Rights Reserved.</p>
+            </div>
+        </div>
+    </div>
 </footer>
-<script src="script.js"></script>
+
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/imagesloaded.pkgd.min.js"></script>
+<script src="assets/js/isotope.pkgd.min.js"></script>
+<script src="assets/js/swiper-bundle.min.js"></script>
+<script src="assets/js/leaflet.js"></script>
+<script src="assets/js/jquery.waypoints.min.js"></script>
+<script src="assets/js/jquery.counterup.min.js"></script>
+<script src="assets/js/aos.js"></script>
+<script src="assets/js/jquery.preloadinator.min.js"></script>
+<script src="assets/js/vanilla-tilt.min.js"></script>
+<script src="assets/js/typer.js"></script>
+<script src="assets/js/script.js"></script>
 </body>
 </html>
