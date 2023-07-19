@@ -1,4 +1,4 @@
-(function(e, t) {
+(function (e, t) {
     let o,
         i,
         a,
@@ -17,24 +17,26 @@
         s.crossOrigin = "anonymous",
         s.async = !0,
         s.src = "https://cdn.amplitude.com/libs/amplitude-8.1.0-min.gz.js",
-        s.onload = function() {
+        s.onload = function () {
             e.amplitude.runQueuedFunctions || console.log("[Amplitude] Error: could not load SDK")
         },
         a = t.getElementsByTagName("script")[0],
         a.parentNode.insertBefore(s, a);
+
     function h(e, t) {
-        e.prototype[t] = function() {
+        e.prototype[t] = function () {
             return this._q.push([t].concat(Array.prototype.slice.call(arguments, 0))), this
         }
     }
-    r = function() {
+
+    r = function () {
         return this._q = [], this
     },
         c = ["add", "append", "clearAll", "prepend", "set", "setOnce", "unset", "preInsert", "postInsert", "remove"];
     for (o = 0; o < c.length; o++)
         h(r, c[o]);
     n.Identify = r,
-        l = function() {
+        l = function () {
             return this._q = [], this
         },
         d = ["setProductId", "setQuantity", "setPrice", "setRevenueType", "setEventProperties"];
@@ -42,23 +44,27 @@
         h(l, d[i]);
     n.Revenue = l,
         u = ["init", "logEvent", "logRevenue", "setUserId", "setUserProperties", "setOptOut", "setVersionName", "setDomain", "setDeviceId", "enableTracking", "setGlobalUserProperties", "identify", "clearUserProperties", "setGroup", "logRevenueV2", "regenerateDeviceId", "groupIdentify", "onInit", "logEventWithTimestamp", "logEventWithGroups", "setSessionId", "resetSessionId"];
+
     function m(e) {
         function n(t) {
-            e[t] = function() {
+            e[t] = function () {
                 e._q.push([t].concat(Array.prototype.slice.call(arguments, 0)))
             }
         }
+
         for (var t = 0; t < u.length; t++)
             n(u[t])
     }
+
     m(n),
-        n.getInstance = function(e) {
+        n.getInstance = function (e) {
             return e = (!e || e.length === 0 ? "$default_instance" : e).toLowerCase(), Object.prototype.hasOwnProperty.call(n._iq, e) || (n._iq[e] = {
                 _q: []
             }, m(n._iq[e])), n._iq[e]
         },
         e.amplitude = n
 })(window, document);
+
 function getReferrerHost() {
     try {
         return new URL(document.referrer).hostname
@@ -66,6 +72,7 @@ function getReferrerHost() {
         return null
     }
 }
+
 amplitude.getInstance().init("1d6c62a471c2e4d71820bd631ad371ae"),
     amplitude.getInstance().logEvent("Pageview", {
         path: window.location.pathname,
