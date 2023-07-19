@@ -536,7 +536,7 @@ header nav a:hover {
         height: 162px;
         width: 97px;
         border-radius: 8px;
-        background: url(../assets/qr-code.svg) no-repeat
+        background: url(../images/qr-code.svg) no-repeat
     }
 }
 
@@ -803,7 +803,7 @@ header nav a:hover {
 
 .hero {
     background-color: var(--color-background-dark);
-    background-image: url(../assets/banner.png);
+    background-image: url(../images/banner.png);
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: cover
