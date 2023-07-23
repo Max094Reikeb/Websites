@@ -1,0 +1,7 @@
+{
+  "name": "Websites",
+  "version": "1.0.0",
+  "dependencies": {
+    "autoprefixer": "^10.4.14"
+  }
+}
