@@ -32,16 +32,21 @@ function displayMovies(movies) {
         poster.src = 'https://image.tmdb.org/t/p/w500' + movie.poster_path;
         imgWrapper.appendChild(poster);
 
+        var overlay = document.createElement('div');
+        overlay.classList.add('overlay');
+        imgWrapper.appendChild(overlay);
+
         var services = document.createElement('div');
         services.setAttribute('data-jw-widget', '');
         services.setAttribute('data-api-key', 'ABCdef12');
         services.setAttribute('data-object-type', 'movie');
         services.setAttribute('data-title', movie.title);
         services.setAttribute('data-year', movie.release_date.split('-')[0]);
-        services.setAttribute('data-theme', 'dark');
-        services.setAttribute('data-scale', '0.9');
         services.setAttribute('data-no-offers-message', '');
         services.setAttribute('data-title-not-found-message', '')
+        services.setAttribute('data-theme', 'dark');
+        services.setAttribute('data-scale', '0.9');
+        services.setAttribute('data-max-offers', '12')
         imgWrapper.appendChild(services);
 
         var title = document.createElement('p');

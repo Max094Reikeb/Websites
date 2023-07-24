@@ -99,6 +99,19 @@ body {
 
 .img-wrapper iframe {
     position: absolute;
+    top: 10px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+}
+
+.img-wrapper .overlay {
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -113,6 +126,10 @@ body {
 }
 
 .img-wrapper:hover iframe {
+    opacity: 1;
+}
+
+.img-wrapper:hover .overlay {
     opacity: 1;
 }
 
