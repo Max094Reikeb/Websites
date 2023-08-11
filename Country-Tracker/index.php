@@ -18,9 +18,8 @@
                 </div>
                 <div class="index-one-img">
                     <picture>
-                        <!-- Waiting for picture
-                        <img src="assets/images/flighty-header-dark@2x.png" alt="Screenshot of Flighty's Push Notifications">
-                        -->
+                        <img src="assets/images/mockups/country-tracker-header.png"
+                             alt="Screenshot of Country Tracker's home page">
                     </picture>
                 </div>
             </div>
@@ -32,9 +31,8 @@
         <div class="feature-image-all">
             <div class="feature-image-item">
                 <picture>
-                    <!-- Waiting for picture
-                    <img src="assets/images/flighty-push-notifications-dark@2x.png" alt="Screenshot of Flighty's Push Notifications">
-                    -->
+                    <img src="assets/images/mockups/country-tracker-filter.png"
+                         alt="Screenshot of Country Tracker's filter page">
                 </picture>
                 <div>
                     <h2>Filter your Countries</h2>
@@ -44,9 +42,8 @@
             </div>
             <div class="feature-image-item">
                 <picture id="feature-image-item-second-mobile">
-                    <!-- Waiting for picture
-                    <img src="assets/images/flighty-pilot-level-data-dark@2x.png" alt="Screenshot of Where Is My Plane Tile">
-                    -->
+                    <img src="assets/images/mockups/country-tracker-details.png"
+                         alt="Screenshot of Country Tracker's dummy details page">
                 </picture>
                 <div id="feature-second">
                     <h2>Country Informations</h2>
@@ -55,15 +52,14 @@
                         it? Get on a plane!</p>
                 </div>
                 <picture id="feature-image-item-second-desktop">
-                    <!-- Waiting for picture
-                    <img src="assets/images/flighty-pilot-level-data-dark@2x.png" alt="Screenshot of Where Is My Plane Tile">
-                    -->
+                    <img src="assets/images/mockups/country-tracker-details.png"
+                         alt="Screenshot of Country Tracker's dummy details page">
                 </picture>
             </div>
             <!-- Waiting for widgets to open this section
             <div class="feature-image-item">
                 <picture>
-                    <img src="assets/flighty-power-and-clarity-dark@2x.png" alt="Screenshot of Where Is My Plane Tile">
+                    <img src="assets/images/mockup/country-tracker-widget.png" alt="Screenshot of Country Tracker's widget">
                 </picture>
                 <div>
                     <h2>Amazing Widgets</h2>
