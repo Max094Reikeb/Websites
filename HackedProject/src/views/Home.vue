@@ -1,21 +1,22 @@
 <script setup>
   import { ref, onMounted, computed } from 'vue';
   import ShowCard from "../components/ShowCard.vue";
+  import store from "../store";
 
   const query = ref('');
   const shows = ref([]);
   const filteredShows = computed(() => {
     if (!query.value) return shows.value;
-    return shows.value.filter(show =>
-        show.title.toLowerCase().includes(query.value.toLowerCase())
-    );
+    return shows.value.filter((show) => show.title.toLowerCase().includes(query.value.toLowerCase()));
   });
 
   const fetchShows = async (endpoint) => {
-    const url = `http://192.168.1.128:5001/api/${endpoint}?access_token=d0bfe52c9f5f435ab909534d32dcb44c29258780`;
+    const address = "192.168.1.128:5001";
+    const token = "d0bfe52c9f5f435ab909534d32dcb44c29258780";
+    const url = `http://${address}/${endpoint}?access_token=${token}`;
     const response = await fetch(url);
     if (!response.ok) {
-      console.error(`Failed to fetch ${endpoint}:`, response.statusText);
+      console.error(`Failed to fetch ${endpoint}: `, response.statusText);
       return [];
     }
     return response.json();
@@ -23,10 +24,11 @@
 
   const searchMovies = async () => {
     const [movies, series] = await Promise.all([
-      fetchShows('movies'),
-      fetchShows('series')
+      fetchShows('api/movies'),
+      fetchShows('api/series')
     ]);
     shows.value = [...movies, ...series];
+    store.allSeries.value = [...series];
   };
 
   onMounted(searchMovies);
@@ -54,7 +56,6 @@
     font-size: 22px;
     font-weight: 900;
     text-align: center;
-    color: white;
   }
 
   .search input {

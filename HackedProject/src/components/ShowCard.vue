@@ -1,17 +1,34 @@
 <script setup>
-  defineProps({
-    show: {
-      type: Object,
-      required: true
+  import { defineProps, computed, ref } from 'vue';
+
+  const props = defineProps({
+    show: Object
+  });
+
+  const isSeries = ref('poster_path' in props.show && typeof props.show.poster_path === 'object');
+  const imageSrc = computed(() => {
+    if (isSeries.value) {
+      const posterPaths = Object.values(props.show.poster_path);
+      return 'https://image.tmdb.org/t/p/w500/' + posterPaths[0];
+    } else {
+      return 'https://image.tmdb.org/t/p/w500/' + props.show.poster_path;
     }
   });
+
+  const linkHref = computed(() => isSeries.value ? "#" : props.show.file_link);
+
+  const handleClick = () => {
+    if (isSeries.value) {
+      window.location.hash = `/show?id=${props.show.id}`;
+    }
+  }
 </script>
 
 <template>
   <div class="show">
     <div class="img-wrapper">
-      <img :src="'https://image.tmdb.org/t/p/w500/' + show.poster_path" alt="">
-      <a :href="show.file_link" target="_blank" rel="noopener noreferrer">
+      <img :src="imageSrc" alt="">
+      <a :href="linkHref" target="_blank" rel="noopener noreferrer" @click.prevent="handleClick">
         <div class="overlay"></div>
       </a>
     </div>
@@ -79,6 +96,5 @@
     padding: 5px;
     text-align: center;
     font-size: 14px;
-    color: white;
   }
 </style>

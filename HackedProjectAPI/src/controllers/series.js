@@ -1,6 +1,6 @@
 import {MongoClient} from "mongodb";
 
-// We setup the MongoDB client for customer database.
+// We setup the MongoDB client for series database.
 const client = new MongoClient("mongodb://localhost:27017");
 await client.connect();
 const db = client.db("test");
@@ -18,22 +18,16 @@ const seriesDb = db.collection("series");
  *      [
  *          {
  *              "id": 0,
- *              "title": "",
- *              "poster_path": "",
+ *              "title": "The Winchesters",
+ *              "poster_path": {
+ *                  "01": "oyleYabGfn6c50bIo4M3c7ogrfL.jpg"
+ *              },
  *              "links": [
  *                  {
- *                      "0101": "",
- *                      "0102": "",
- *                      "0103": "",
- *                      "0104": "",
- *                      "0105": ""
- *                  },
- *                  {
- *                      "0201": "",
- *                      "0202": "",
- *                      "0203": "",
- *                      "0204": "",
- *                      "0205": ""
+ *                      "0101": "https://1fichier.com/?of69ujj3cjq0z90xkr9f&af=3797078",
+ *                      "0102": "https://1fichier.com/?d45hkvg7zhnuszxfe1p5&af=3797078",
+ *                      "0103": "https://1fichier.com/?s0tdw8ti51xwsjtcovwb&af=3797078",
+ *                      "0104": "https://1fichier.com/?24nu6ac0r1ili84459qk&af=4814702"
  *                  }
  *              ]
  *              "year": 2023
@@ -41,7 +35,11 @@ const seriesDb = db.collection("series");
  *          {
  *              "id": 1,
  *              "title": "",
- *              "poster_path": "",
+ *              "poster_path": [
+ *                  {
+ *                      "01": ""
+ *                  }
+ *              ],
  *              links: [
  *                  {
  *                      "0101": "",
@@ -73,22 +71,16 @@ export const getSeries = async (req, res) => {
  *      HTTP/1.1 200 OK
  *      {
  *          "id": 0,
- *          "title": "",
- *          "poster_path": "",
+ *          "title": "The Winchesters",
+ *          "poster_path": {
+ *              "01": "oyleYabGfn6c50bIo4M3c7ogrfL.jpg"
+ *          },
  *          "links": [
  *              {
- *                  "0101": "",
- *                  "0102": "",
- *                  "0103": "",
- *                  "0104": "",
- *                  "0105": ""
- *              },
- *              {
- *                  "0201": "",
- *                  "0202": "",
- *                  "0203": "",
- *                  "0204": "",
- *                  "0205": ""
+ *                  "0101": "https://1fichier.com/?of69ujj3cjq0z90xkr9f&af=3797078",
+ *                  "0102": "https://1fichier.com/?d45hkvg7zhnuszxfe1p5&af=3797078",
+ *                  "0103": "https://1fichier.com/?s0tdw8ti51xwsjtcovwb&af=3797078",
+ *                  "0104": "https://1fichier.com/?24nu6ac0r1ili84459qk&af=4814702"
  *              }
  *          ]
  *          "year": 2023
