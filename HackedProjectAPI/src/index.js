@@ -31,12 +31,12 @@ app.post('/oauth/token', (req, res, next) => {
 });
 
 /**
- * Setup the Games router.
+ * Setup the Series router.
  */
 app.use("/api/series", authenticateRequest, seriesRouter);
 
 /**
- * Setup the Customers router.
+ * Setup the Movies router.
  */
 app.use("/api/movies", authenticateRequest, moviesRouter);
 

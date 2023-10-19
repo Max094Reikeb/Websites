@@ -1,6 +1,6 @@
 import {MongoClient} from "mongodb";
 
-// We setup the MongoDB client for game database.
+// We setup the MongoDB client for movies database.
 const client = new MongoClient("mongodb://localhost:27017");
 await client.connect();
 const db = client.db("test");
@@ -141,6 +141,7 @@ export const updateMovie = (req, res) => {
             $set: {
                 title: req.body.title,
                 poster_path: req.body.poster_path,
+                file_link: req.body.file_link,
                 year: parseInt(req.body.year)
             }
         })
