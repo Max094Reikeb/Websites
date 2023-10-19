@@ -1,0 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700,900');
+
+body {
+  width: 75%;
+  margin: 0 auto;
+  background-color: black;
+  font-family: 'Raleway', sans-serif;
+}
