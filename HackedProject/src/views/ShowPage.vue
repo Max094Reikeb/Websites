@@ -1,16 +1,21 @@
 <script setup>
   import { computed, defineProps, ref } from 'vue';
   import store from "../store.js";
+  import EpisodeTable from "../components/EpisodeTable.vue";
 
   const props = defineProps({
     currentShowId: Number
   })
-  const {allSeries} = store;
+  const { allSeries } = store;
   const selectedSeason = ref(null);
 
   const selectSeason = (season) => {
     selectedSeason.value = season;
   };
+
+  const goHome = () => {
+    window.location.hash = '#/';
+  }
 
   const series = computed(() => {
     return allSeries.value.find(series => series.id === props.currentShowId) || null;
@@ -28,27 +33,16 @@
         </div>
         <p>Season {{ season }}</p>
       </div>
+      <button @click="goHome">Home</button>
     </div>
     <div v-else class="episodes">
-      <button @click="selectSeason(null)">Back to Seasons</button>
-      <div v-for="(season, seasonIndex) in series.links" :key="seasonIndex" class="season-episodes">
-        <table class="episode-table">
-          <thead>
-          <tr>
-            <th>Season {{ seasonIndex + 1 }}</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr v-for="(link, episode) in season" :key="episode">
-            <td>
-              <a :href="link" target="_blank" rel="noopener noreferrer">
-                Episode {{ episode.slice(2) }}
-              </a>
-            </td>
-          </tr>
-          </tbody>
-        </table>
+      <div class="season-poster" v-if="series.poster_path[selectedSeason]">
+        <img :src="'https://image.tmdb.org/t/p/w500/' + series.poster_path[selectedSeason]" alt="">
       </div>
+      <div v-for="(season, seasonIndex) in series.links" :key="seasonIndex" class="season-episodes">
+        <EpisodeTable :season="season" :season-index="seasonIndex" />
+      </div>
+      <button @click="selectSeason(null)">Back</button>
     </div>
   </div>
 </template>
@@ -56,6 +50,7 @@
 <style scoped>
   .episode-selector {
     padding: 2rem;
+    max-height: 300vh;
   }
 
   .episode-selector h1 {
@@ -74,14 +69,13 @@
     border: 1px solid #ccc;
     border-radius: 0.5rem;
     cursor: pointer;
-  }
-
-  .season-card {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     max-height: 100vh;
+    transform: scale(0.7);
+    margin-top: -10vh;
   }
 
   .season-card .image-wrapper {
@@ -100,85 +94,49 @@
     border-radius: 0.5rem;
   }
 
+  .episodes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    min-height: 0;
+    align-content: center;
+  }
+
+  .episodes,
+  .episodes > * {
+    margin: 0;
+    padding: 0;
+  }
+
+  .season-poster {
+    transform: scale(0.5);
+    align-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: -15vh;
+    margin-top: -19vh;
+  }
+
   .season-episodes {
-    padding-top: 20px;
+    width: 100%;
+    margin-bottom: -10vh;
   }
 
-  .episode-table th h1 {
-    font-weight: bold;
-    font-size: 1em;
-    text-align: left;
-    color: #185875;
-  }
-
-  .episode-table td {
-    font-weight: normal;
-    font-size: 1em;
-    -webkit-box-shadow: 0 2px 2px -2px #0E1119;
-    -moz-box-shadow: 0 2px 2px -2px #0E1119;
-    box-shadow: 0 2px 2px -2px #0E1119;
-  }
-
-  .episode-table {
-    text-align: center;
-    overflow: hidden;
-    width: 80%;
-    margin: 0 auto;
-    display: table;
-    padding: 0 0 8em 0;
-    color: white;
-  }
-
-  .episode-table td, .episode-table th {
-    padding-bottom: 2%;
-    padding-top: 2%;
-    padding-left: 2%;
-  }
-
-  .episode-table tr:nth-child(odd) {
-    background-color: #323C50;
-  }
-
-  .episode-table tr:nth-child(even) {
-    background-color: #2C3446;
-  }
-
-  .episode-table th {
+  .episode-selector button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 0.5rem;
     background-color: #1F2739;
-  }
-
-  .episode-table td:first-child {
-    color: #2C3446;
-  }
-
-  .episode-selector a {
-    color: white;
-    text-decoration: none;
-  }
-
-  .episode-table tr:hover {
-    background-color: #464A52;
-    -webkit-box-shadow: 0 6px 6px -6px #0E1119;
-    -moz-box-shadow: 0 6px 6px -6px #0E1119;
-    box-shadow: 0 6px 6px -6px #0E1119;
-  }
-
-  .episode-table td:hover {
-    background-color: #464A52;
-    font-weight: bold;
-    box-shadow: #7F7C21 -1px 1px, #2C3446 -2px 2px, #2C3446 -3px 3px, #2C3446 -4px 4px, #2C3446 -5px 5px, #2C3446 -6px 6px;
-    transform: translate3d(6px, -6px, 0);
-    transition-delay: 0s;
-    transition-duration: 0.4s;
-    transition-property: all;
-    transition-timing-function: line;
+    font-size: 16px;
     cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    color: white;
+    width: 70%;
   }
 
-  @media (max-width: 800px) {
-    .episode-table td:nth-child(4),
-    .episode-table th:nth-child(4) {
-      display: none;
-    }
+  .episode-selector button:hover {
+    background-color: #185875;
   }
 </style>

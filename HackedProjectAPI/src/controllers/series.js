@@ -35,11 +35,9 @@ const seriesDb = db.collection("series");
  *          {
  *              "id": 1,
  *              "title": "",
- *              "poster_path": [
- *                  {
- *                      "01": ""
- *                  }
- *              ],
+ *              "poster_path": {
+ *                  "01": ""
+ *              },
  *              links: [
  *                  {
  *                      "0101": "",
