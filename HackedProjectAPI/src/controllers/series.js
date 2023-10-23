@@ -24,10 +24,10 @@ const seriesDb = db.collection("series");
  *              },
  *              "links": [
  *                  {
- *                      "0101": "https://1fichier.com/?of69ujj3cjq0z90xkr9f&af=3797078",
- *                      "0102": "https://1fichier.com/?d45hkvg7zhnuszxfe1p5&af=3797078",
- *                      "0103": "https://1fichier.com/?s0tdw8ti51xwsjtcovwb&af=3797078",
- *                      "0104": "https://1fichier.com/?24nu6ac0r1ili84459qk&af=4814702"
+ *                      "0101-Pilot": "https://1fichier.com/?of69ujj3cjq0z90xkr9f&af=3797078",
+ *                      "0102-Teach Your Children Well": "https://1fichier.com/?d45hkvg7zhnuszxfe1p5&af=3797078",
+ *                      "0103-You're Lost Little Girl": "https://1fichier.com/?s0tdw8ti51xwsjtcovwb&af=3797078",
+ *                      "0104-Masters of War": "https://1fichier.com/?24nu6ac0r1ili84459qk&af=4814702"
  *                  }
  *              ]
  *              "year": 2023
@@ -75,10 +75,10 @@ export const getSeries = async (req, res) => {
  *          },
  *          "links": [
  *              {
- *                  "0101": "https://1fichier.com/?of69ujj3cjq0z90xkr9f&af=3797078",
- *                  "0102": "https://1fichier.com/?d45hkvg7zhnuszxfe1p5&af=3797078",
- *                  "0103": "https://1fichier.com/?s0tdw8ti51xwsjtcovwb&af=3797078",
- *                  "0104": "https://1fichier.com/?24nu6ac0r1ili84459qk&af=4814702"
+ *                  "0101-Pilot": "https://1fichier.com/?of69ujj3cjq0z90xkr9f&af=3797078",
+ *                  "0102-Teach Your Children Well": "https://1fichier.com/?d45hkvg7zhnuszxfe1p5&af=3797078",
+ *                  "0103-You're Lost Little Girl": "https://1fichier.com/?s0tdw8ti51xwsjtcovwb&af=3797078",
+ *                  "0104-Masters of War": "https://1fichier.com/?24nu6ac0r1ili84459qk&af=4814702"
  *              }
  *          ]
  *          "year": 2023

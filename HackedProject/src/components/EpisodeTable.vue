@@ -2,7 +2,13 @@
   const props = defineProps({
     season: Object,
     seasonIndex: Number
-  })
+  });
+
+  const getEpisodeName = (episode) => {
+    let episodeFullName = episode.slice(2);
+    let episodeNames = episodeFullName.split('-', 2);
+    return episodeNames[0] + ". " + episodeNames[1];
+  }
 </script>
 
 <template>
@@ -16,7 +22,7 @@
     <tr v-for="(link, episode) in season" :key="episode">
       <td>
         <a :href="link" target="_blank" rel="noopener noreferrer">
-          Episode {{ episode.slice(2) }}
+          {{ getEpisodeName(episode) }}
         </a>
       </td>
     </tr>
