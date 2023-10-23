@@ -1,5 +1,5 @@
 <script setup>
-  import { computed, defineProps, ref } from 'vue';
+  import { computed, ref } from 'vue';
   import store from "../store.js";
   import EpisodeTable from "../components/EpisodeTable.vue";
 

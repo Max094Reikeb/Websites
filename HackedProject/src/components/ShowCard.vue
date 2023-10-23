@@ -1,5 +1,5 @@
 <script setup>
-  import { defineProps, computed, ref } from 'vue';
+  import { computed, ref } from 'vue';
 
   const props = defineProps({
     show: Object
@@ -17,8 +17,9 @@
 
   const linkHref = computed(() => isSeries.value ? "#" : props.show.file_link);
 
-  const handleClick = () => {
+  const handleClick = (event) => {
     if (isSeries.value) {
+      event.preventDefault();
       window.location.hash = `/show?id=${props.show.id}`;
     }
   }
@@ -28,7 +29,7 @@
   <div class="show">
     <div class="img-wrapper">
       <img :src="imageSrc" alt="">
-      <a :href="linkHref" target="_blank" rel="noopener noreferrer" @click.prevent="handleClick">
+      <a :href="linkHref" target="_blank" rel="noopener noreferrer" @click="handleClick($event)">
         <div class="overlay"></div>
       </a>
     </div>
