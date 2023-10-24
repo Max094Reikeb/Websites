@@ -1,13 +1,24 @@
 <script setup>
-  import { ref, onMounted, computed } from 'vue';
+  import { ref, onMounted, computed, watchEffect } from 'vue';
   import ShowCard from "../components/ShowCard.vue";
+  import ShowOption from "../components/ShowOption.vue";
+  import YearDropdown from "../components/YearDropdown.vue";
+  import SearchIcon from "../components/SearchIcon.vue";
   import store from "../store";
 
   const query = ref('');
+  const selectedOption = ref('');
+  const selectedYear = ref('');
   const shows = ref([]);
   const filteredShows = computed(() => {
-    if (!query.value) return shows.value;
-    return shows.value.filter((show) => show.title.toLowerCase().includes(query.value.toLowerCase()));
+    let result = shows.value;
+    if (query.value) {
+      result = result.filter((show) => show.title.toLowerCase().includes(query.value.toLowerCase()));
+    }
+    if (selectedYear.value) {
+      result = result.filter((show) => show.year === selectedYear.value)
+    }
+    return result;
   });
 
   const fetchShows = async (endpoint) => {
@@ -22,24 +33,40 @@
     return response.json();
   };
 
-  const searchMovies = async () => {
-    const [movies, series] = await Promise.all([
-      fetchShows('api/movies'),
-      fetchShows('api/series')
-    ]);
+  const searchShows = async () => {
+    let movies = [];
+    let series = [];
+
+    if (selectedOption.value === 'Movies' || (!['Movies', 'TV Shows'].includes(selectedOption.value))) {
+      movies = await fetchShows('api/movies');
+    }
+
+    if (selectedOption.value === 'TV Shows' || (!['Movies', 'TV Shows'].includes(selectedOption.value))) {
+      series = await fetchShows('api/series');
+    }
+
     shows.value = [...movies, ...series];
     store.allSeries.value = [...series];
   };
 
-  onMounted(searchMovies);
+  onMounted(searchShows);
+
+  watchEffect(() => {
+    searchShows();
+  }, { flush: 'post' });
 </script>
 
 <template>
   <div class="search">
     <p>Max's shows and movies library</p>
-    <label>
-      <input type="text" v-model="query" placeholder="Search">
-    </label>
+    <div class="search-area">
+        <div class="search-bar">
+          <input type="text" v-model="query" placeholder="Search">
+          <SearchIcon />
+        </div>
+        <ShowOption v-model="selectedOption" :selectedOption="selectedOption" @update:selectedOption="val => selectedOption.value = val" />
+        <YearDropdown v-model="selectedYear" :selectedYear="selectedYear" @update:selectedYear="val => selectedYear.value = val" />
+    </div>
   </div>
   <div id="results">
     <ShowCard v-for="show in filteredShows" :key="show.id" :show="show" />
@@ -58,6 +85,27 @@
     text-align: center;
   }
 
+  .search-area {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+  }
+
+  .search-bar {
+    position: relative;
+    width: 79%;
+    padding-right: 50px;
+  }
+
+  .search-bar > svg {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 24px;
+    height: 24px;
+    pointer-events: none;
+  }
+
   .search input {
     width: 100%;
     padding: 12px 24px;
@@ -65,10 +113,6 @@
     font-size: 14px;
     line-height: 18px;
     color: #575756;
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-size: 18px 18px;
-    background-position: 95% center;
     border-radius: 50px;
     border: 1px solid #575756;
     transition: all 250ms ease-in-out;
