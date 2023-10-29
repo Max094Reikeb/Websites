@@ -34,20 +34,36 @@ const seriesDb = db.collection("series");
  *          },
  *          {
  *              "id": 1,
- *              "title": "",
+ *              "title": "Our Flag Means Death",
  *              "poster_path": {
- *                  "01": ""
+ *                  "01": "9jgmWIdK0kjjtBqEZntfSDWTgr9.jpg",
+ *                  "02": "mP9OYUoZWod61G8gnsZ5TX1qft.jpg"
  *              },
  *              links: [
  *                  {
- *                      "0101": "",
- *                      "0102": "",
- *                      "0103": "",
- *                      "0104": "",
- *                      "0105": ""
+ *                      "0101-Pilot": "https://1fichier.com/?yy3zj6r9r30jzt2yytg7&af=3797078",
+ *                      "0102-A Damned Man": "https://1fichier.com/?1gk1t6nuzlwswnkd410z&af=3797078",
+ *                      "0103-A Gentleman Pirate": "https://1fichier.com/?rplc1nun8xdreqm5n6pc&af=3797078",
+ *                      "0104-Discomfort in a Married State": "https://1fichier.com/?t4pvs95y51wxv9dqthqo&af=3797078",
+ *                      "0105-The Best Revenge Is Dressing Well": "https://1fichier.com/?fh4t5mav6bqhn5xvud5g&af=3797078",
+ *                      "0106-The Art of Fuckery": "https://1fichier.com/?ktdbd0nxvy9t8u1956h1&af=3797078",
+ *                      "0107-This Is Happening": "https://1fichier.com/?rynq3yaeq3iem742ypsp&af=3797078",
+ *                      "0108-We Gull Way Back": "https://1fichier.com/?fy2maqpk1md1r19v3m1x&af=3797078",
+ *                      "0109-Act of Grace": "https://1fichier.com/?9b517sny2g16wus7qk40&af=3797078",
+ *                      "0110-Wherever You Go, There You Are": "https://1fichier.com/?9yzu3lo5iekw0vk14nc9&af=3797078"
+ *                  },
+ *                  {
+ *                      "0201-Impossible Birds": "https://1fichier.com/?tz8jgpkr41y0mt7nvm6t&af=4814702",
+ *                      "0202-Red Flags": "https://1fichier.com/?9myir3zawn1pk7m8mh3x&af=4814702",
+ *                      "0203-The Innkeeper": "https://1fichier.com/?59exld3xullc3k361r8m&af=4814702",
+ *                      "0204-Fun and Games": "https://1fichier.com/?dp5b8u5mh6f46ufsx6k8&af=4814702",
+ *                      "0205-The Curse of the Seafaring Life": "https://1fichier.com/?thvvpi1j09a8x61w63v3&af=4814702",
+ *                      "0206-Calypso's Birthday": "https://1fichier.com/?fq9axmqc0pkiccp7ouoo&af=4814702",
+ *                      "0207-Man on Fire": "https://1fichier.com/?isylh3zxr7f6vnhtf12x&af=4814702",
+ *                      "0208-Mermen": "https://1fichier.com/?n9qlxctkiqx4qtkvxtja&af=4814702"
  *                  }
  *              ]
- *              "year": 2023
+ *              "year": 2022
  *          }
  *      ]
  */
